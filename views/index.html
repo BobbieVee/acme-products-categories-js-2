@@ -2,6 +2,15 @@
 
 {% block body %}
 <h2> Home </h2>
+<div class='well'>
+	<form class='form-group' action='/categories' method='post'>
+		<label>
+			<input type="text" name="category" placeholder="Add Category">
+		</label>
+		<button type='submit' class='btn btn-primary'>Submit</button>
+	</form>	
+</div>
+
 <h4>Welcome to Acme!</h4>
 
 {% endblock %}

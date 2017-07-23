@@ -3,16 +3,30 @@
  {% block body %}
  <div class='well'>
 		<h4>Add Product</h4>
+			<form method='post' action='/categories/{{activeCat}}'>
+				<label for='product'>
+					<input type="text" name="product" placeholder="Product Name">
+					<button class='btn btn-primary' type='submit' >Submit</button>
+				</label>
+				
+			</form>
  </div>
  <h2>Products for {{active}}</h2>
  <ul class='list-group'>
  	{% for product in products %}
- 	<li class='list-group-item' >{{product.name}}</li>
+ 	<li class='list-group-item' >
+ 		{{product.name}}
+ 		<form method='post' action='/categories/{{activeCat}}/{{product.id}}?_method=delete'>
+	 		<button class='btn btn-warning'>Delete</button>
+ 		</form>
+ 	</li>
 
  	{% endfor %}	
 
  </ul>
  
-
+	<form method='post' action='/categories/{{activeCat}}?_method=delete'>
+		<button class='btn btn-danger'>Delete Category</button>
+	</form>
 
  {% endblock %}
