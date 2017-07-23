@@ -20,7 +20,7 @@ const getCatNames = () => Object.keys(data);
 const getProdByCat = (cat) => data[cat].map((prod) => prod);
 
 const seed = () => {
-	data = [];
+	data = {};
 	const cats = ['Snacks', 'Meats'];
 	const prodSnacks = ['3 Musketeers', 'Almond Pack', 'Oreos', 'Doritos'];
 	const prodMeats = ['Fisheses', 'Stupid Fat Hobbit', 'Rabbits - Raw and Wrigglin\'', 'Orcs']
@@ -32,6 +32,6 @@ const seed = () => {
 
 seed();
 
-module.exports = {addCat: addCat, deleteCat: deleteCat, addProd: addProd, deleteProd: deleteProd, getCatNames: getCatNames, getProdByCat: getProdByCat, seed: seed };
+module.exports = {addCat: addCat, deleteCat: deleteCat, addProd: addProd, deleteProd: deleteProd, getCatNames: getCatNames, getProdByCat: getProdByCat, seed: seed, data: data };
 
 // console.log('data = ', data);

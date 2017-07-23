@@ -3,7 +3,7 @@ const path = require('path');
 const nunjucks =  require('nunjucks');
 const methodOverride =  require('method-override');
 const bodyParser = require('body-parser');
-let {seed, getCatNames, getProdByCat, addCat, deleteCat, addProd, deleteProd} = require('./db');
+let {seed, getCatNames, getProdByCat, addCat, deleteCat, addProd, deleteProd, data} = require('./db');
 
 const app = express();
 app.use(express.static(__dirname + '/node_modules'));
@@ -15,12 +15,12 @@ nunjucks.configure('views', {noCache: true});
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
-	res.render('index', {catNames: getCatNames()} );
+	res.render('index', {catNames: getCatNames(), data: data });
 } );
 
 app.get('/categories/:category', (req, res) => {
 	const cat = req.params.category;
-	res.render('category', {activeCat: cat,  products: getProdByCat(cat), catNames: getCatNames()});
+	res.render('category', {activeCat: cat,  products: getProdByCat(cat), catNames: getCatNames(), data: data});
 });
 
 app.delete('/categories/:category', (req, res) => {

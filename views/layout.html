@@ -23,8 +23,15 @@
 	</ul>
 	{% block body %}
 	{% endblock %}
+	<br>
+	<div class='well'>
+		<h4>Data</h4>
+		<pre style="white-space: normal">
+			{{ data | dump }}
+		</pre>	
+		
+	</div>
 </div>
-
 
 </body>
 </html>
