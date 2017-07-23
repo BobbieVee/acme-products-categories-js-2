@@ -32,6 +32,6 @@ const seed = () => {
 
 seed();
 
-module.exports = {addCat: addCat, deleteCat: deleteCat, addProd: addProd, deleteProd: deleteProd, getCatNames: getCatNames, getProdByCat: getProdByCat, seed: seed, data: data };
+module.exports = {addCat: addCat, deleteCat: deleteCat, addProd: addProd, deleteProd: deleteProd, getCatNames: getCatNames, getProdByCat: getProdByCat, seed: seed, data: data};
 
 // console.log('data = ', data);
