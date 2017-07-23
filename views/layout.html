@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>!!Acme Products and Cats!</title>
+	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div class='container'>
+	<h1>Acme Product Categories</h1>
+	<ul class='nav nav-tabs' >
+		<li {% if not activeCat %}class='active'{% endif%}>
+			<a href='/'>Home</a>
+		</li>
+
+	{% for category in catNames %}
+		<li{% if activeCat == category %} class='active'  {% endif%}>
+			<a href='/categories/{{category}}'>  {{category}} </a>
+		</li>
+	{% endfor %}
+
+		<li><a href='/seed'>  Seed</a></li>
+
+	</ul>
+	{% block body %}
+	{% endblock %}
+</div>
+
+
+</body>
+</html>

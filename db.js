@@ -12,7 +12,7 @@ const addProd = (cat, prod) => {
 
 const deleteProd = (cat, id) => data[cat] = data[cat].filter((prod) => prod.id !== id);
 const getCatNames = () => Object.keys(data);
-const getProdByCat = (cat) => data[cat].map((prod) => prod.name);
+const getProdByCat = (cat) => data[cat].map((prod) => prod);
 
 const seed = () => {
 	addCat('Snacks');
@@ -20,11 +20,12 @@ const seed = () => {
 	addProd('Snacks', 'Almond Pack');
 	addCat('Meats');
 	addProd('Meats', 'Fisheses');
-	addProd('Meats', 'Fat Hobbit')	
+	addProd('Meats', 'Fat Hobbit');
+	console.log('Just Seeded the DB.');	
 }
 
 seed();
 
-module.exports = {addCat: addCat, deleteCat: deleteCat, addProd: addProd, deleteProd: deleteProd, getCatNames: getCatNames, getProdByCat: getProdByCat, seed: seed }
+module.exports = {addCat: addCat, deleteCat: deleteCat, addProd: addProd, deleteProd: deleteProd, getCatNames: getCatNames, getProdByCat: getProdByCat, seed: seed };
 
-console.log('data = ', data)
+// console.log('data = ', data);
